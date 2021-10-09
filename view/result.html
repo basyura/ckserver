@@ -1,0 +1,65 @@
+{{define "result"}}
+<html>
+  <style>
+    table {
+      border:1px solid gray;
+    }
+    th {
+      min-width:100px;
+    }
+    td {
+      border:1px solid gray;
+      padding-left:5px;
+    }
+  </style>
+</head>
+<body>
+
+{{.Method}}
+<hr>
+QueryParams
+<table >
+  <thead>
+    <th>Key</th><th>Value</th>
+  </thead>
+  <tbody>
+    {{range .QueryParams}}
+      <tr>
+        <td>{{.Key }}</td><td>{{.Value}}</td>
+      </tr>
+    {{end}}
+  </tbody>
+</table>
+<hr>
+FormParams
+<table >
+  <thead>
+    <th>Key</th><th>Value</th>
+  </thead>
+  <tbody>
+    {{range .FormParams}}
+      <tr>
+        <td>{{.Key }}</td><td>{{.Value}}</td>
+      </tr>
+    {{end}}
+  </tbody>
+</table>
+<!--
+<hr>
+Params
+<table border="1px">
+  <thead>
+    <th>Key</th><th>Value</th>
+  </thead>
+  <tbody>
+    {{range .Params}}
+      <tr>
+        <td>{{.Key }}</td><td>{{.Value}}</td>
+      </tr>
+    {{end}}
+  </tbody>
+</table>
+-->
+{{end}}
+</body>
+</html>
