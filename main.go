@@ -32,8 +32,8 @@ type KeyValue struct {
 	Value string
 }
 
-// curl "http://localhost:2345/result?a=b&c=d"
-// curl -F "a=b" -F "c=d" -X POST http://localhost:2345/result
+// curl --noproxy "*" "http://localhost:2345/result?a=b&c=d"
+// curl --noproxy "*" -F "a=b" -F "c=d" -X POST http://localhost:2345/result
 func main() {
 	var exePath string
 	exePath, err := os.Executable()
